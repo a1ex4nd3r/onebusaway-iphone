@@ -146,6 +146,8 @@
 		93528AAE1C8D50D200783E9A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93528AAD1C8D50D200783E9A /* MapKit.framework */; };
 		93528AB11C8D517100783E9A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93528AB01C8D517100783E9A /* CloudKit.framework */; };
 		9353FF921E08E70A00B7A5C3 /* VehicleMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353FF911E08E70A00B7A5C3 /* VehicleMapController.swift */; };
+		93563C141FE3185500B62DC1 /* DrawerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93563C131FE3185500B62DC1 /* DrawerUI.swift */; };
+		93563C181FE31CFD00B62DC1 /* PullUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93563C171FE31CFD00B62DC1 /* PullUpController.swift */; };
 		9358CDA41DEA19BA00132CDE /* OBATestHarnessPersistenceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9358CDA11DEA19BA00132CDE /* OBATestHarnessPersistenceLayer.m */; };
 		9358CDA51DEA19BA00132CDE /* OBATestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9358CDA31DEA19BA00132CDE /* OBATestHelpers.m */; };
 		9358CDB61DEA265200132CDE /* OBADepartureCellHelpers_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9358CDB51DEA265200132CDE /* OBADepartureCellHelpers_Tests.m */; };
@@ -483,6 +485,8 @@
 		93528AAF1C8D50E900783E9A /* OneBusAway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = OneBusAway.entitlements; path = OneBusAway/Resources/OneBusAway.entitlements; sourceTree = "<group>"; };
 		93528AB01C8D517100783E9A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		9353FF911E08E70A00B7A5C3 /* VehicleMapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleMapController.swift; sourceTree = "<group>"; };
+		93563C131FE3185500B62DC1 /* DrawerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerUI.swift; sourceTree = "<group>"; };
+		93563C171FE31CFD00B62DC1 /* PullUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullUpController.swift; sourceTree = "<group>"; };
 		935640331DA03B810017AB87 /* san_joaquin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = san_joaquin.gpx; sourceTree = "<group>"; };
 		9358CDA01DEA19BA00132CDE /* OBATestHarnessPersistenceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBATestHarnessPersistenceLayer.h; sourceTree = "<group>"; };
 		9358CDA11DEA19BA00132CDE /* OBATestHarnessPersistenceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBATestHarnessPersistenceLayer.m; sourceTree = "<group>"; };
@@ -980,6 +984,7 @@
 				934197691DB0C140004BBBB7 /* OBAClassicApplicationUI.m */,
 				6B24C8741EC7F99E00A1F7B7 /* OBANavigationTitleView.h */,
 				6B24C8751EC7F99E00A1F7B7 /* OBANavigationTitleView.m */,
+				93563C131FE3185500B62DC1 /* DrawerUI.swift */,
 			);
 			path = themes;
 			sourceTree = "<group>";
@@ -1010,6 +1015,7 @@
 		934197BF1DB0C14C004BBBB7 /* externals */ = {
 			isa = PBXGroup;
 			children = (
+				93563C161FE31CFD00B62DC1 /* PullUpController */,
 				93A6E5211E6CB23500BEFECE /* ISHHoverBar */,
 				934C509B1E2B69E300DFDCA0 /* GKActionSheetPicker */,
 				93FE60231E0B2F34006EC9FB /* SVPulsingAnnotationView */,
@@ -1337,6 +1343,14 @@
 			);
 			name = push_notifications;
 			path = OneBusAway/push_notifications;
+			sourceTree = "<group>";
+		};
+		93563C161FE31CFD00B62DC1 /* PullUpController */ = {
+			isa = PBXGroup;
+			children = (
+				93563C171FE31CFD00B62DC1 /* PullUpController.swift */,
+			);
+			path = PullUpController;
 			sourceTree = "<group>";
 		};
 		9358CD9F1DEA19BA00132CDE /* helpers */ = {
@@ -1749,6 +1763,7 @@
 				930AFE8C1DD04D2F0092AE82 /* OBAStopTableHeaderView.m in Sources */,
 				934197811DB0C140004BBBB7 /* OBABookmarksViewController.m in Sources */,
 				934197A11DB0C140004BBBB7 /* OBASegmentedRow.m in Sources */,
+				93563C181FE31CFD00B62DC1 /* PullUpController.swift in Sources */,
 				9341977D1DB0C140004BBBB7 /* AlertPresenter.swift in Sources */,
 				934C50A01E2B69E300DFDCA0 /* GKActionSheetPicker.m in Sources */,
 				934197BD1DB0C140004BBBB7 /* OBATripScheduleSectionBuilder.m in Sources */,
@@ -1762,6 +1777,7 @@
 				93B781AD1E64BAC900F2C38D /* OBAMapViewController.m in Sources */,
 				934197A91DB0C140004BBBB7 /* OBAReportProblemWithStopViewController.m in Sources */,
 				9341981D1DB0C1BA004BBBB7 /* OBALabelAndSwitchTableViewCell.m in Sources */,
+				93563C141FE3185500B62DC1 /* DrawerUI.swift in Sources */,
 				6B24C8761EC7F99E00A1F7B7 /* OBANavigationTitleView.m in Sources */,
 				934198191DB0C1BA004BBBB7 /* OBAMapActivityIndicatorView.m in Sources */,
 				934197BE1DB0C140004BBBB7 /* OBAVehicleDetailsController.m in Sources */,

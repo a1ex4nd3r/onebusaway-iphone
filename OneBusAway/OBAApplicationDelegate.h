@@ -20,8 +20,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OBAApplicationDelegate : UIResponder <UIApplicationDelegate, OBANavigator>
-@property (nullable, nonatomic, strong) UIWindow *window;
+@property(nullable, nonatomic, strong) UIWindow *window;
+@property(nonatomic,strong,readonly) id<OBANavigator> navigator;
+
 - (void)regionSelected;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -169,6 +169,19 @@ static const double kStopsInRegionRefreshDelayOnDrag = 0.1;
     [self unregisterFromLocationNotifications];
 }
 
+#pragma mark - OBANavigator
+
+- (void)navigateToTarget:(OBANavigationTarget*)navigationTarget {
+    [self.navigator navigateToTarget:navigationTarget];
+}
+
+- (id<OBANavigator>)navigator {
+    if (!_navigator) {
+        _navigator = [APP_DELEGATE navigator];
+    }
+    return _navigator;
+}
+
 #pragma mark - Search
 
 - (void)configureSearch {
@@ -448,8 +461,8 @@ static const double kStopsInRegionRefreshDelayOnDrag = 0.1;
     id annotation = view.annotation;
 
     if ([annotation respondsToSelector:@selector(stopId)]) {
-        OBAStopViewController *stopController = [[OBAStopViewController alloc] initWithStopID:[annotation stopId]];
-        [self.navigationController pushViewController:stopController animated:YES];
+        StopNavigationTarget *navigationTarget = [[StopNavigationTarget alloc] initWithStopID:[annotation stopId]];
+        [self navigateToTarget:navigationTarget];
     }
     else if ([annotation isKindOfClass:[OBAPlacemark class]]) {
         OBAPlacemark *placemark = annotation;
@@ -542,15 +555,6 @@ static const double kStopsInRegionRefreshDelayOnDrag = 0.1;
     nearbyStops.navigator = self;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nearbyStops];
     [self presentViewController:nav animated:YES completion:nil];
-}
-
-- (void)navigateToTarget:(OBANavigationTarget*)navigationTarget {
-    if (navigationTarget.searchType == OBASearchTypeStopId) {
-        [self displayStopControllerForStopID:navigationTarget.searchArgument];
-    }
-    else {
-        [APP_DELEGATE navigateToTarget:navigationTarget];
-    }
 }
 
 - (void)displayStopControllerForSearchResult:(OBASearchResult*)searchResult {

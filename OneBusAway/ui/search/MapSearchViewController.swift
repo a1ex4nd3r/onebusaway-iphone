@@ -120,7 +120,7 @@ class MapSearchViewController: OBAStaticTableViewController, UISearchResultsUpda
         // Stop Number Row
         let stopNumberText = MapSearchViewController.quickLookupRowText(title: NSLocalizedString("map_search.search_for_stop_number", comment: "Stop Number: <STOP NUMBER>"), searchText: searchText)
         let stopNumberRow = OBATableRow.init(attributedTitle: stopNumberText) { _ in
-            let target = OBANavigationTarget(forStopID: searchText)
+            let target = StopNavigationTarget.init(stopID: searchText)
             self.delegate?.mapSearch(self, selectedNavigationTarget: target)
         }
         stopNumberRow.accessoryType = .disclosureIndicator
@@ -137,7 +137,7 @@ class MapSearchViewController: OBAStaticTableViewController, UISearchResultsUpda
 
         let tableRows = rows.map { evt -> OBATableRow in
             let tableRow = OBATableRow.init(title: evt.title, action: { _ in
-                let target = OBANavigationTarget(forStopID: evt.stopID)
+                let target = StopNavigationTarget.init(stopID: evt.stopID)
                 self.delegate?.mapSearch(self, selectedNavigationTarget: target)
             })
             tableRow.subtitle = evt.subtitle
@@ -157,7 +157,7 @@ class MapSearchViewController: OBAStaticTableViewController, UISearchResultsUpda
 
         let rows = bookmarks.map { bm -> OBATableRow in
             let tableRow = OBATableRow.init(title: bm.name, action: { _ in
-                let target = OBANavigationTarget(forStopID: bm.stopId)
+                let target = StopNavigationTarget.init(stopID: bm.stopId)
                 self.delegate?.mapSearch(self, selectedNavigationTarget: target)
             })
             tableRow.accessoryType = .disclosureIndicator

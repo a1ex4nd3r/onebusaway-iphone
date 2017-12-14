@@ -151,7 +151,7 @@ class NearbyStopsViewController: OBAStaticTableViewController {
 
         section.rows = rows.map { stop in
             let row = OBATableRow.init(title: stop.name) { _ in
-                let target = OBANavigationTarget(forStopID: stop.stopId)
+                let target = StopNavigationTarget.init(stopID: stop.stopId)
                 self.navigateTo(target)
             }
             row.subtitle = String.localizedStringWithFormat(NSLocalizedString("text_only_routes_colon_param", comment: "e.g. Routes: 10, 12, 43"), stop.routeNamesAsString())

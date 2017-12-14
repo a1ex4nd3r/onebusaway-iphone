@@ -18,6 +18,7 @@
 #import <OBAKit/NSCoder+OBAAdditions.h>
 #import <OBAKit/OBAMacros.h>
 #import <OBAKit/OBARouteV2.h>
+#import <OBAKit/OBAKit-Swift.h>
 
 NSString * const kOBASearchTypeParameter = @"OBASearchTypeParameter";
 NSString * const OBAStopIDNavigationTargetParameter = @"stopId";
@@ -129,10 +130,6 @@ NSString * const OBAUserSearchQueryKey = @"OBAUserSearchQueryKey";
 
 + (OBANavigationTarget*)navigationTargetForSearchPlacemark:(OBAPlacemark*)placemark {
     return [self navigationTargetForSearchType:OBASearchTypePlacemark argument:placemark];
-}
-
-+ (OBANavigationTarget*)navigationTargetForStopID:(NSString*)stopID {
-    return [self navigationTargetForSearchType:OBASearchTypeStopId argument:stopID];
 }
 
 + (OBANavigationTarget*)navigationTargetForRegionalAlert:(OBARegionalAlert*)regionalAlert {

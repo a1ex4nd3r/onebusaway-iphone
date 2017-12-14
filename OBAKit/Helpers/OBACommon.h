@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, OBANavigationTargetType) {
     OBANavigationTargetTypeRecentStops,
     OBANavigationTargetTypeBookmarks,
     OBANavigationTargetTypeContactUs,
+    OBANavigationTargetTypeStopID,
 };
 
 typedef NS_ENUM(NSUInteger, OBAErrorCode) {

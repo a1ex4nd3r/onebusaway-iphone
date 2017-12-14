@@ -68,16 +68,12 @@ static NSString * const OBALastRegionRefreshDateUserDefaultsKey = @"OBALastRegio
     return self;
 }
 
-- (void)navigateToTarget:(OBANavigationTarget *)navigationTarget {
-    [self.application.references clear];
-    [self.applicationUI navigateToTargetInternal:navigationTarget];
-}
-
 - (void)_constructUI {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
 
-    self.applicationUI = [[OBAClassicApplicationUI alloc] init];
+//    self.applicationUI = [[OBAClassicApplicationUI alloc] init];
+    self.applicationUI = [[DrawerUI alloc] init];
 
     [OBATheme setAppearanceProxies];
 
@@ -194,6 +190,17 @@ static NSString * const OBALastRegionRefreshDateUserDefaultsKey = @"OBALastRegio
     }]];
 
     [self.topViewController presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - OBANavigator
+
+- (void)navigateToTarget:(OBANavigationTarget *)navigationTarget {
+    [self.application.references clear];
+    [self.applicationUI navigateToTargetInternal:navigationTarget];
+}
+
+- (id<OBANavigator>)navigator {
+    return self;
 }
 
 #pragma mark - Deep Linking

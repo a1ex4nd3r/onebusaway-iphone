@@ -224,6 +224,7 @@
 		9385BEDC1FB040B300D122D1 /* OBAErrorMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 9385BEDA1FB040B300D122D1 /* OBAErrorMessages.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9385BEDD1FB040B300D122D1 /* OBAErrorMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 9385BEDB1FB040B300D122D1 /* OBAErrorMessages.m */; };
 		9387F0F91FDDD9F50033A922 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9387F0F81FDDD9F50033A922 /* NetworkResponse.swift */; };
+		93952AC61FE320C80032C70F /* StopNavigationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93952AC51FE320C80032C70F /* StopNavigationTarget.swift */; };
 		93A6E9E21F5BC18B00AFA61C /* AppInterop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6E9E11F5BC18B00AFA61C /* AppInterop.swift */; };
 		93A73BF21F8760F600F213D4 /* OBAClassicDepartureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 93A73BF01F8760F600F213D4 /* OBAClassicDepartureView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93A73BF31F8760F600F213D4 /* OBAClassicDepartureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A73BF11F8760F600F213D4 /* OBAClassicDepartureView.m */; };
@@ -505,6 +506,7 @@
 		9385BEDA1FB040B300D122D1 /* OBAErrorMessages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBAErrorMessages.h; sourceTree = "<group>"; };
 		9385BEDB1FB040B300D122D1 /* OBAErrorMessages.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBAErrorMessages.m; sourceTree = "<group>"; };
 		9387F0F81FDDD9F50033A922 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		93952AC51FE320C80032C70F /* StopNavigationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopNavigationTarget.swift; sourceTree = "<group>"; };
 		93A6E9E11F5BC18B00AFA61C /* AppInterop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInterop.swift; sourceTree = "<group>"; };
 		93A73BF01F8760F600F213D4 /* OBAClassicDepartureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBAClassicDepartureView.h; sourceTree = "<group>"; };
 		93A73BF11F8760F600F213D4 /* OBAClassicDepartureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBAClassicDepartureView.m; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 				930653F71E71D75A005AF0C9 /* OBANavigationTargetAware.h */,
 				930653F21E71D704005AF0C9 /* OBADeepLinkRouter.h */,
 				930653F31E71D704005AF0C9 /* OBADeepLinkRouter.m */,
+				93952AC51FE320C80032C70F /* StopNavigationTarget.swift */,
 			);
 			path = navigation;
 			sourceTree = "<group>";
@@ -1290,6 +1293,7 @@
 				934196271DB0B099004BBBB7 /* OBANavigationTargetAnnotation.m in Sources */,
 				934196311DB0B099004BBBB7 /* OBAModelDAOUserPreferencesImpl.m in Sources */,
 				93A6E9E21F5BC18B00AFA61C /* AppInterop.swift in Sources */,
+				93952AC61FE320C80032C70F /* StopNavigationTarget.swift in Sources */,
 				9341968B1DB0B099004BBBB7 /* OBATripScheduleV2.m in Sources */,
 				9358CDB31DEA242B00132CDE /* OBAUpcomingDeparture.m in Sources */,
 				934196011DB0B099004BBBB7 /* OBACommon.m in Sources */,

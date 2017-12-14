@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class OBAPlacemark;
 @class OBARouteV2;
 @class OBARegionalAlert;
+@class StopNavigationTarget;
 
 extern NSString * const kOBASearchTypeParameter;
 extern NSString * const OBAStopIDNavigationTargetParameter;
@@ -52,7 +53,6 @@ extern NSString * const OBAUserSearchQueryKey;
 + (OBANavigationTarget*)navigationTargetForRoute:(OBARouteV2*)route;
 + (OBANavigationTarget*)navigationTargetForSearchAddress:(NSString*)addressQuery;
 + (OBANavigationTarget*)navigationTargetForSearchPlacemark:(OBAPlacemark*)placemark;
-+ (OBANavigationTarget*)navigationTargetForStopID:(NSString*)stopID;
 + (OBANavigationTarget*)navigationTargetForRegionalAlert:(OBARegionalAlert*)regionalAlert;
 @end
 

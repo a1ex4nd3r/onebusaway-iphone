@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) OBAModelDAO *modelDAO;
 @property(nonatomic,strong) OBAModelService *modelService;
 @property(nonatomic,strong) OBALocationManager *locationManager;
+@property(nonatomic,strong) id<OBANavigator> navigator;
 
 - (void)recenterMap;
 @end
