@@ -53,6 +53,7 @@ static NSInteger kNegligibleWalkingTimeToStop = 25;
     self = [super initWithNibName:nil bundle:nil];
 
     if (self) {
+        _displaysHeader = YES;
         _reloadLock = [[NSLock alloc] init];
         _stopID = [stopID copy];
         _minutesBefore = 5;
@@ -78,7 +79,9 @@ static NSInteger kNegligibleWalkingTimeToStop = 25;
 
     self.navigationItem.title = NSLocalizedString(@"stop_view_controller.stop_back_title", @"Back button title representing going back to the stop controller.");
 
-    [self createTableHeaderView];
+    if (self.displaysHeader) {
+        [self createTableHeaderView];
+    }
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadData:)];
     self.refreshControl = [[UIRefreshControl alloc] init];

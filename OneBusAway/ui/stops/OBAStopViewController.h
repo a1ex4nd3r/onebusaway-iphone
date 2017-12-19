@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy,readonly) NSString *stopID;
 @property(nonatomic,assign) NSUInteger minutesBefore;
 @property(nonatomic,assign) NSUInteger minutesAfter;
+@property(nonatomic,assign) BOOL displaysHeader;
 
 - (instancetype)initWithStopID:(NSString*)stopID NS_DESIGNATED_INITIALIZER;
 

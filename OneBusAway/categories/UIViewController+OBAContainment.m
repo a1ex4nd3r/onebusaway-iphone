@@ -28,13 +28,20 @@
 }
 
 - (void)oba_addChildViewController:(UIViewController*)viewController {
+    [self oba_addChildViewController:viewController settingFrame:YES];
+}
+
+- (void)oba_addChildViewController:(UIViewController*)viewController settingFrame:(BOOL)settingFrame {
     if (!viewController) {
         return;
     }
 
     [self oba_prepareChildViewController:viewController];
 
-    viewController.view.frame = self.view.bounds;
+    if (settingFrame) {
+        viewController.view.frame = self.view.bounds;
+    }
+    
     [self.view addSubview:viewController.view];
     [viewController didMoveToParentViewController:self];
 }

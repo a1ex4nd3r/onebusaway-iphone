@@ -13,6 +13,12 @@ import PromiseKit
     private let cancellablePromise: CancellablePromise
     public var promise: Promise<NetworkResponse>
 
+    @objc init(data: Data) {
+        let response = NetworkResponse.init(object: data, URLResponse: HTTPURLResponse())
+        self.cancellablePromise = CancellablePromise.init(value: response)
+        self.promise = self.cancellablePromise
+    }
+
     @objc init(request: URLRequest) {
         self.cancellablePromise = CancellablePromise.go(request: request)
         self.promise = cancellablePromise.then { response -> NetworkResponse in
@@ -44,7 +50,7 @@ class CancellablePromise: Promise<NetworkResponse> {
     }
 
     required init(value: NetworkResponse) {
-        fatalError("init(value:) has not been implemented")
+        super.init(value: value)
     }
 
     public func cancel() {

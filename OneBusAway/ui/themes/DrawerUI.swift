@@ -13,6 +13,14 @@ class DrawerUI: NSObject, OBAApplicationUI {
     private lazy var mapNavigation: UINavigationController = {
         return UINavigationController.init(rootViewController: mapController)
     }()
+    private let drawer = DrawerViewController.init()
+
+    override init() {
+        super.init()
+
+        mapController.oba_addChildViewController(drawer, settingFrame: false)
+        drawer.view.frame = CGRect.init(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+    }
 
     var rootViewController: UIViewController {
         get {
@@ -30,8 +38,15 @@ class DrawerUI: NSObject, OBAApplicationUI {
 
     func navigate(toTargetInternal navigationTarget: OBANavigationTarget) {
         if navigationTarget.target == .stopID {
-            let stopController = OBAStopViewController.init(stopID: navigationTarget.object as! String)
-            mapNavigation.present(stopController, animated: true, completion: nil)
+
+//            let stopController = OBAStopViewController.init(stopID: navigationTarget.object as! String)
+//            stopController.displaysHeader = false
+//            let nav = UINavigationController.init(rootViewController: stopController)
+//
+//            let pulley = PullUpController.init()
+//            pulley.oba_addChildViewController(nav)
+//
+//            mapNavigation.addPullUpController(pulley)
         }
     }
 }

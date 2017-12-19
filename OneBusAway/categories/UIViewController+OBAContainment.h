@@ -14,4 +14,5 @@
 
 - (void)oba_prepareChildViewController:(UIViewController*)viewController;
 - (void)oba_addChildViewController:(UIViewController*)viewController;
+- (void)oba_addChildViewController:(UIViewController*)viewController settingFrame:(BOOL)settingFrame;
 @end

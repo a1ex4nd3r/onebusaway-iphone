@@ -11,8 +11,13 @@ import PromiseKit
 // MARK: Stop -> OBAArrivalAndDepartureV2
 @objc public class PromisedModelService: OBAModelService {
     @objc public func requestStopArrivalsAndDepartures(withID stopID: String, minutesBefore: UInt, minutesAfter: UInt) -> PromiseWrapper {
-        let request = buildURLRequestForStopArrivalsAndDepartures(withID: stopID, minutesBefore: minutesBefore, minutesAfter: minutesAfter)
-        let promiseWrapper = PromiseWrapper.init(request: request)
+//        let request = buildURLRequestForStopArrivalsAndDepartures(withID: stopID, minutesBefore: minutesBefore, minutesAfter: minutesAfter)
+//        let promiseWrapper = PromiseWrapper.init(request: request)
+
+        // abxoxo - don't forget to remove this code and remove stop_1_11420 from the OBA target!
+        let filePath = Bundle.main.path(forResource: "stop_1_11420", ofType: "json")
+        let data = NSData.init(contentsOfFile: filePath!)
+        let promiseWrapper = PromiseWrapper.init(data: data! as Data)
 
         promiseWrapper.promise = promiseWrapper.promise.then { networkResponse -> NetworkResponse in
             let checkCode = self.obaJsonDataSource.checkStatusCodeInBody
