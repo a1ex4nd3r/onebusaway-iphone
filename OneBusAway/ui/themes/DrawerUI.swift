@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class DrawerUI: NSObject, OBAApplicationUI {
     private let mapController = OBAMapViewController.init()
@@ -19,7 +20,11 @@ class DrawerUI: NSObject, OBAApplicationUI {
         super.init()
 
         mapController.oba_addChildViewController(drawer, settingFrame: false)
-        drawer.view.frame = CGRect.init(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+        drawer.view.snp.makeConstraints { make in
+            make.width.equalToSuperview().inset(10)
+            make.height.equalTo(150)
+            make.centerX.bottom.equalToSuperview()
+        }
     }
 
     var rootViewController: UIViewController {

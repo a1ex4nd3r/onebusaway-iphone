@@ -11,11 +11,19 @@ import SnapKit
 
 class DrawerViewController: UIViewController {
     private let label = UILabel.init()
+    private let visualEffectView = UIVisualEffectView.init(effect: UIBlurEffect.init(style: UIBlurEffectStyle.regular))
+
+    override func loadView() {
+        self.view = visualEffectView
+        visualEffectView.contentView.layer.masksToBounds = false
+        visualEffectView.contentView.layer.shadowRadius = 8.0
+        visualEffectView.contentView.layer.shadowColor = UIColor.black.cgColor
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.addSubview(label)
+        visualEffectView.contentView.addSubview(label)
         label.text = "I AM A DRAWER"
         label.snp.makeConstraints { make in
             make.center.equalToSuperview()
