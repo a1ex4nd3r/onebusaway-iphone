@@ -7,8 +7,8 @@
 //
 
 @import UIKit;
-#import <OBAKit/OBATableCell.h>
+#import <OBAKit/OBABookmarkedRouteCell.h>
 
-@interface OBACompactRouteBookmarkCell : UITableViewCell<OBATableCell>
+@interface OBACompactRouteBookmarkCell : OBABookmarkedRouteCell
 
 @end

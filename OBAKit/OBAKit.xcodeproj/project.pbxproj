@@ -261,7 +261,7 @@
 		93E592B11F8D3C600079A2D8 /* OBABookmarkedRouteCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E592AD1F8D3C600079A2D8 /* OBABookmarkedRouteCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E592B21F8D3C600079A2D8 /* OBABookmarkedRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E592AE1F8D3C600079A2D8 /* OBABookmarkedRouteCell.m */; };
 		93E592B31F8D3C600079A2D8 /* OBABookmarkedRouteRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E592AF1F8D3C600079A2D8 /* OBABookmarkedRouteRow.m */; };
-		93E592B61F8D3D250079A2D8 /* OBALabelActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E592B41F8D3D240079A2D8 /* OBALabelActivityIndicatorView.h */; };
+		93E592B61F8D3D250079A2D8 /* OBALabelActivityIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E592B41F8D3D240079A2D8 /* OBALabelActivityIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93E592B71F8D3D250079A2D8 /* OBALabelActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E592B51F8D3D240079A2D8 /* OBALabelActivityIndicatorView.m */; };
 		93F3F8911E7A88EA0025FC78 /* RegionalAlertsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3F8901E7A88EA0025FC78 /* RegionalAlertsManager.swift */; };
 		93F3F89C1E7B02400025FC78 /* OBARegionalAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 93F3F89A1E7B02400025FC78 /* OBARegionalAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
