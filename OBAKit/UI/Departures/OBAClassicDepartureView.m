@@ -127,9 +127,9 @@
 - (void)prepareForReuse {
     self.routeLabel.text = nil;
     self.departureTimeLabel.text = nil;
-    self.leadingLabel.text = nil;
-    self.centerLabel.text = nil;
-    self.trailingLabel.text = nil;
+    [self.leadingLabel prepareForReuse];
+    [self.centerLabel prepareForReuse];
+    [self.trailingLabel prepareForReuse];
 }
 
 #pragma mark - Row Logic
@@ -201,10 +201,6 @@
 
 + (OBADepartureTimeLabel*)departureTimeLabel {
     OBADepartureTimeLabel *label = [[OBADepartureTimeLabel alloc] init];
-    label.font = kSmallFont;
-    label.textAlignment = NSTextAlignmentRight;
-    [label setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
-    [label setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
     return label;
 }
 

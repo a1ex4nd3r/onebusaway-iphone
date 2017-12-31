@@ -11,8 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OBADepartureTimeLabel : UILabel
+@interface OBADepartureTimeLabel : UIView
 
+- (void)prepareForReuse;
 - (void)setText:(NSString *)minutesUntilDeparture forStatus:(OBADepartureStatus)status;
 
 @end

@@ -35,6 +35,8 @@
 		9327DEF41E02306900502F06 /* OBACanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9327DEF21E02306900502F06 /* OBACanvasView.m */; };
 		9336B1C31FF8360000CCC5ED /* OBACompactRouteBookmarkCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9336B1C11FF8360000CCC5ED /* OBACompactRouteBookmarkCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9336B1C41FF8360000CCC5ED /* OBACompactRouteBookmarkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9336B1C21FF8360000CCC5ED /* OBACompactRouteBookmarkCell.m */; };
+		9336B1C71FF8CE6D00CCC5ED /* UIFont+OBAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9336B1C51FF8CE6D00CCC5ED /* UIFont+OBAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9336B1C81FF8CE6D00CCC5ED /* UIFont+OBAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9336B1C61FF8CE6D00CCC5ED /* UIFont+OBAAdditions.m */; };
 		933A47161FDCCB81009EB332 /* PromiseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A47151FDCCB81009EB332 /* PromiseWrapper.swift */; };
 		934195431DB0B013004BBBB7 /* OBAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934195391DB0B013004BBBB7 /* OBAKit.framework */; };
 		934195481DB0B013004BBBB7 /* OBAKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 934195471DB0B013004BBBB7 /* OBAKitTests.m */; };
@@ -315,6 +317,8 @@
 		9327DEF21E02306900502F06 /* OBACanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBACanvasView.m; sourceTree = "<group>"; };
 		9336B1C11FF8360000CCC5ED /* OBACompactRouteBookmarkCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBACompactRouteBookmarkCell.h; sourceTree = "<group>"; };
 		9336B1C21FF8360000CCC5ED /* OBACompactRouteBookmarkCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBACompactRouteBookmarkCell.m; sourceTree = "<group>"; };
+		9336B1C51FF8CE6D00CCC5ED /* UIFont+OBAAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+OBAAdditions.h"; sourceTree = "<group>"; };
+		9336B1C61FF8CE6D00CCC5ED /* UIFont+OBAAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+OBAAdditions.m"; sourceTree = "<group>"; };
 		933A47151FDCCB81009EB332 /* PromiseWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseWrapper.swift; sourceTree = "<group>"; };
 		934195391DB0B013004BBBB7 /* OBAKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OBAKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		934195421DB0B013004BBBB7 /* OBAKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OBAKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -695,6 +699,8 @@
 				934C50981E2B656900DFDCA0 /* NSDictionary+OBAAdditions.m */,
 				935C39171F772CE300737DC4 /* NSString+OBAAdditions.h */,
 				935C39181F772CE300737DC4 /* NSString+OBAAdditions.m */,
+				9336B1C51FF8CE6D00CCC5ED /* UIFont+OBAAdditions.h */,
+				9336B1C61FF8CE6D00CCC5ED /* UIFont+OBAAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1144,6 +1150,7 @@
 				9336B1C31FF8360000CCC5ED /* OBACompactRouteBookmarkCell.h in Headers */,
 				9341968A1DB0B099004BBBB7 /* OBATripScheduleV2.h in Headers */,
 				934196921DB0B099004BBBB7 /* OBAVehicleStatusV2.h in Headers */,
+				9336B1C71FF8CE6D00CCC5ED /* UIFont+OBAAdditions.h in Headers */,
 				9341965A1DB0B099004BBBB7 /* OBAFrequencyV2.h in Headers */,
 				934196241DB0B099004BBBB7 /* OBASphericalGeometryLibrary.h in Headers */,
 				934C50991E2B656900DFDCA0 /* NSDictionary+OBAAdditions.h in Headers */,
@@ -1347,6 +1354,7 @@
 				934196131DB0B099004BBBB7 /* OBARouteFilter.m in Sources */,
 				93E5929C1F8CAA9C0079A2D8 /* OBATableSection.m in Sources */,
 				93E592B21F8D3C600079A2D8 /* OBABookmarkedRouteCell.m in Sources */,
+				9336B1C81FF8CE6D00CCC5ED /* UIFont+OBAAdditions.m in Sources */,
 				93E592B31F8D3C600079A2D8 /* OBABookmarkedRouteRow.m in Sources */,
 				93089D9F1F87E6B900694A90 /* OBABaseRow.m in Sources */,
 				934196B31DB0B0AF004BBBB7 /* OBAModelFactory.m in Sources */,
