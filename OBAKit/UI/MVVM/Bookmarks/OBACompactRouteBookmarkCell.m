@@ -22,7 +22,6 @@
 
     if (self) {
         [self.titleLabel removeFromSuperview];
-        
     }
 
     return self;

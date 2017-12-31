@@ -99,7 +99,7 @@
         UIStackView *labelStack = [[UIStackView alloc] initWithArrangedSubviews:@[_routeLabel, _departureTimeLabel]];
         labelStack.axis = UILayoutConstraintAxisVertical;
         labelStack.distribution = UIStackViewDistributionFill;
-        labelStack.spacing = OBATheme.compactPadding;
+        labelStack.spacing = 0;
 
         UIStackView *horizontalStack = ({
             UIStackView *stack = [[UIStackView alloc] initWithArrangedSubviews:@[labelStack, _leadingWrapper, _centerWrapper, _trailingWrapper, _contextMenuButton]];
