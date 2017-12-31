@@ -24,6 +24,7 @@
 @interface OBAClassicDepartureView ()
 @property(nonatomic,strong,readwrite) UIButton *contextMenuButton;
 @property(nonatomic,strong) UILabel *routeLabel;
+@property(nonatomic,strong) UILabel *departureTimeLabel;
 @property(nonatomic,strong,readwrite) OBADepartureTimeLabel *leadingLabel;
 @property(nonatomic,strong) UIView *leadingWrapper;
 
@@ -54,7 +55,13 @@
 
         _routeLabel = ({
             UILabel *l = [[UILabel alloc] init];
-            l.numberOfLines = 0;
+            [l setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+            [l setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+            [l setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisVertical];
+            l;
+        });
+        _departureTimeLabel = ({
+            UILabel *l = [[UILabel alloc] init];
             [l setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
             [l setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
             [l setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisVertical];
@@ -75,6 +82,7 @@
         if (kUseDebugColors) {
             self.backgroundColor = [UIColor purpleColor];
             _routeLabel.backgroundColor = [UIColor greenColor];
+            _departureTimeLabel.backgroundColor = [UIColor blueColor];
 
             _leadingLabel.backgroundColor = [UIColor magentaColor];
             _leadingWrapper.backgroundColor = [UIColor redColor];
@@ -88,8 +96,13 @@
             _contextMenuButton.backgroundColor = [UIColor yellowColor];
         }
 
+        UIStackView *labelStack = [[UIStackView alloc] initWithArrangedSubviews:@[_routeLabel, _departureTimeLabel]];
+        labelStack.axis = UILayoutConstraintAxisVertical;
+        labelStack.distribution = UIStackViewDistributionFill;
+        labelStack.spacing = OBATheme.compactPadding;
+
         UIStackView *horizontalStack = ({
-            UIStackView *stack = [[UIStackView alloc] initWithArrangedSubviews:@[_routeLabel, _leadingWrapper, _centerWrapper, _trailingWrapper, _contextMenuButton]];
+            UIStackView *stack = [[UIStackView alloc] initWithArrangedSubviews:@[labelStack, _leadingWrapper, _centerWrapper, _trailingWrapper, _contextMenuButton]];
             stack.axis = UILayoutConstraintAxisHorizontal;
             stack.distribution = UIStackViewDistributionFill;
             stack.spacing = OBATheme.compactPadding;
@@ -113,6 +126,7 @@
 
 - (void)prepareForReuse {
     self.routeLabel.text = nil;
+    self.departureTimeLabel.text = nil;
     self.leadingLabel.text = nil;
     self.centerLabel.text = nil;
     self.trailingLabel.text = nil;
@@ -128,6 +142,7 @@
     _departureRow = [departureRow copy];
 
     [self renderRouteLabel];
+    [self renderDepartureTimeLabel];
 
     if ([self departureRow].upcomingDepartures.count > 0) {
         self.leadingWrapper.hidden = NO;
@@ -162,26 +177,24 @@
 #pragma mark - Label Logic
 
 - (void)renderRouteLabel {
-    // TODO: clean me up once we've verified that users aren't losing their minds over the change.
-    NSString *firstLineText = nil;
-
     if ([self departureRow].destination) {
-        firstLineText = [NSString stringWithFormat:OBALocalized(@"text_route_to_orientation_newline_params", @"Route formatting string. e.g. 10 to Downtown Seattle<NEWLINE>"), [self departureRow].routeName, [self departureRow].destination];
+        self.routeLabel.text = [NSString stringWithFormat:OBALocalized(@"text_route_to_orientation_newline_params", @"Route formatting string. e.g. 10 to Downtown Seattle"), [self departureRow].routeName, [self departureRow].destination];
     }
     else {
-        firstLineText = [NSString stringWithFormat:@"%@\r\n", [self departureRow].routeName];
+        self.routeLabel.text = [self departureRow].routeName;
     }
 
-    NSMutableAttributedString *routeText = [[NSMutableAttributedString alloc] initWithString:firstLineText attributes:@{NSFontAttributeName: kBodyFont}];
+    NSMutableAttributedString *routeText = [[NSMutableAttributedString alloc] initWithString:self.routeLabel.text attributes:@{NSFontAttributeName: kBodyFont}];
 
     [routeText addAttribute:NSFontAttributeName value:kBoldBodyFont range:NSMakeRange(0, [self departureRow].routeName.length)];
+    self.routeLabel.attributedText = routeText;
+}
 
+- (void)renderDepartureTimeLabel {
     OBAUpcomingDeparture *upcoming = [self departureRow].upcomingDepartures.firstObject;
     NSAttributedString *departureTime = [OBADepartureCellHelpers attributedDepartureTimeWithStatusText:[self departureRow].statusText upcomingDeparture:upcoming];
 
-    [routeText appendAttributedString:departureTime];
-
-    self.routeLabel.attributedText = routeText;
+    self.departureTimeLabel.attributedText = departureTime;
 }
 
 #pragma mark - Label and Wrapper Builders
